@@ -31,6 +31,7 @@ class CategoryTodoViewController: UIViewController, UITableViewDataSource, UITab
         items = readItems()
         tableView.reloadData()
     }
+    
     func readItems() -> [TodoItem]{
         return Array(realm.objects(TodoItem.self).filter("category == %@", selectedCategory!))
     }
